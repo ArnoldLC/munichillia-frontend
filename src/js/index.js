@@ -1,6 +1,8 @@
-import {saludo, despedida} from "./modules/example"
-import {activeMenu} from './modules/active-menu'
+require("bootstrap");
+
+import { saludo, despedida } from "./modules/example";
+import { activeMenu } from "./modules/active-menu";
 
 // saludo()
 // despedida()
-activeMenu()
+activeMenu();

@@ -1,9 +1,12 @@
-nav.main-menu(itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation")#main-menu
-  ul
+#navbarNavDropdown.collapse.navbar-collapse(itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation")
+  ul.navbar-nav
     each page in pages
-      li.main-menu__item(itemprop="url")
-          a.main-menu__link(href=page.url itemprop="name")= page.title
-            if page.child.length > 0
-              ul 
-                each page2 in page.child
-                  li: a(href= page2.url)= page2.title
+      if page.child.length > 0
+        li.nav-item.dropdown(itemprop="url")
+          a#navbarDropdownMenuLink.nav-link.dropdown-toggle(href=page.url, role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false' itemprop="name")= page.title
+          ul.dropdown-menu(aria-labelledby='navbarDropdownMenuLink')
+            each page2 in page.child
+              a.dropdown-item(href= page2.url)= page2.title
+      else
+        li.nav-item(itemprop="url")
+          a.nav-link(href=page.url itemprop="name")= page.title

@@ -5,4 +5,14 @@ append config
   -pageImage = 'https://ed.team/sites/default/files/EDboilerplate-logo.png'
 
 block main
-  include ../includes/main-menu
+  include /includes/carousel
+  .main-page.container-fluid.pt-4
+    .row
+      main.col.col-sm-12.col-md-12.col-lg-8
+        h2 Ultimas noticias
+        +new-post()
+        +new-post()
+        +new-post()
+        +new-post()
+      aside.col.col-sm-12.col-md-12.col-lg-4
+        include /includes/sidebar

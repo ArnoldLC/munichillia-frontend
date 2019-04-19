@@ -1,5 +1,6 @@
 block config
   include variables
+  include /components/news-card
 doctype html
 html(lang="es")
   head
@@ -15,6 +16,16 @@ html(lang="es")
     link(rel="shortcut icon" href="img/favicon.png")
     
   body
+    header.header-container
+      .container-fluid
+        .row
+          .header-brand.col-4.col-sm-2.col-lg-1
+            img(src="/assets/img/logo-muni-chilia.png", alt="")
+          .header-title.col-8.col-sm-10.col-lg-11
+            p MUNICIPALIDAD DISTRITAL DE CHILLIA
+    include /includes/navbar
     block main
-
-    script(src="assets/js/scripts-min.js")
+    
+    #fb-root
+    script(async='', defer='', crossorigin='anonymous', src='https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.2&appId=740648836300651&autoLogAppEvents=1')
+    script(src="assets/js/scripts.js")
